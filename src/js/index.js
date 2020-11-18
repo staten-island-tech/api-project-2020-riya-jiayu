@@ -17,8 +17,7 @@ const init = async function(pageNumber){
   const DOMSelectors = {
 };
 const key = `81e21e5440msh0b93b8e3b7cb749p116c5bjsnf5acd0869f72`;
-const query = `https://anilistmikilior1v1.p.rapidapi.com/createAnimeListEntry/?api_key=${key};`
-
+const query = `https://api.jikan.moe/v3`;
     try {
         const response = await fetch(query);
         const data = await response.json()
