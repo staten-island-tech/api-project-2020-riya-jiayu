@@ -25,7 +25,7 @@ body {
   text-align: center;
   font-size: 3.8rem;
 }
-.movie-grid {
+.anime-grid {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
@@ -35,14 +35,14 @@ body {
   padding: 3rem auto;
   align-items: center;
 }
-.movie-card {
+.anime-card {
   height: 65vh;
   width: 20vw;
   margin: 0 auto;
   position: relative;
   margin: 2rem auto;
 }
-.movie-card-front {
+.anime-card-front {
   position: absolute;
   width: 100%;
   height: 100%;
@@ -57,7 +57,7 @@ body {
   width: 100%;
   height: 100%;
 }
-.movie-card-back {
+.anime-card-back {
   transition: all 0.3s;
   position: absolute;
   top: 0;
@@ -73,7 +73,7 @@ body {
   width: 100%;
   height: 100%;
 }
-.movie-card-header {
+.anime-card-header {
   font-size: 2.4rem;
   text-transform: uppercase;
   margin: 1rem auto;
@@ -85,7 +85,7 @@ body {
   text-align: center;
 }
 
-.movie-genres {
+.anime-genres {
   font-size: 1.6rem;
   padding: 1rem 2rem;
   display: flex;
@@ -94,7 +94,7 @@ body {
   flex-wrap: wrap;
   align-items: center;
 }
-.movie-genre {
+.anime-genre {
   list-style: none;
 }
 .user-score {
@@ -104,10 +104,10 @@ body {
   font-size: 2rem;
 }
 
-.movie-card:hover .movie-card-front {
+.anime-card:hover .anime-card-front {
   z-index: 1;
 }
-.movie-card:hover .movie-card-back {
+.anime-card:hover .anime-card-back {
   z-index: 3;
   display: flex;
 }
