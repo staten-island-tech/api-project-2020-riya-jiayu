@@ -16,7 +16,8 @@ nextPage();
 const init = async function(pageNumber){
   const DOMSelectors = {
 };
-const id = []
+let id = []
+let request = []
 const query = `https://jikan.moe/v3/anime/${id}/${request}/${parameter}`;
     try {
         const response = await fetch(query);
@@ -68,4 +69,5 @@ const query = `https://jikan.moe/v3/anime/${id}/${request}/${parameter}`;
     }
 };
 
+const search = `https://api.jikan.moe/v3/search/anime?q=&page=1&genre=${genreId}&order_by=members&sort=desc`;
 init();
