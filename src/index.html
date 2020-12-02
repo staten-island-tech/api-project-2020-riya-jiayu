@@ -12,10 +12,18 @@
   <body>
     <h1 class="header">Anime List</h1>
     <h2 class="top-rated">Our Top Rated Anime</h2>
-    <form class="search-anime">
+    <!-- <form class="search-anime">
       <label for="search-anime-name">Search for Anime:</label>
       <input type="text" name="search-anime-name" id="search-area">
       <input type="submit" value="Submit" id="search-anime-submit">
+    </form> -->
+    <form id="search-form" class="search-form">
+      <textarea
+        name="search-area"
+        id="search-area"
+        placeholder="search for a movie"
+      ></textarea>
+      <input type="submit" class="submit-button" />
     </form>
 <!--     <div class="search-box">
       <input class="search-txt" id="search-area" type="text" name="" placeholder="Type to search">
@@ -24,9 +32,11 @@
     </a>
   </div> -->
     <div class="buttons">
-      <button id="prev">Previous</button>
-      <button id="next">Next</button>
+      <button class="btn-prev">Previous</button>
+      <button class="btn-next">Next</button>
     </div>
+
+    
     <section class="anime-grid">
       <!--  <div class="anime-card">
         <div class="anime-card-front">
