@@ -1,4 +1,4 @@
-//
+import {genres} from "./genres";
 import {DOMSelectors} from "./DOM";
 
 //update variable for page
@@ -16,8 +16,6 @@ nextPage();
 const init = async function(pageNumber){
   const DOMSelectors = {
 };
-let id = []
-let request = []
 const query = `https://jikan.moe/v3/anime/${id}/${request}/${parameter}`;
     try {
         const response = await fetch(query);
