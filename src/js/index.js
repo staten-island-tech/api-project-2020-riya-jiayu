@@ -2,7 +2,7 @@ import {genres} from "./genres";
 import {DOMSelectors} from "./DOM";
 
 //update variable for page
-let pageNumber = 1;
+/*let pageNumber = 1;
 //next function updates variable and passes into query
 const nextPage = function(){
     DOMSelectors.btnNext.addEventListener("click", function(){
@@ -10,56 +10,50 @@ const nextPage = function(){
         init(pageNumber);
     });
 };
+nextPage();*/
 
-nextPage();
-
-const init = async function(pageNumber){
+const init = async function (pageNumber){
   const DOMSelectors = {
-};
-const query = `https://jikan.moe/v3/anime/${id}/${request}/${parameter}`;
+    grid: document.querySelector(".anime-grid"),
+  }
+const query = `https://api.jikan.moe/v3/search/anime?q=&page=1&sort=desc&order_by=members`;
     try {
         const response = await fetch(query);
         const data = await response.json()
         data.results.forEach((anime) => {
             
-            let genreArr = [];
+            /* let genreArr = [];
             const genreIds = function(){
                 genres.forEach((element) =>{
-                if (anime.genre_ids.includes(element.id)) {
+                if (anime.genres_id.includes(element.id)) {
                     genreArr.push(element.name);
                     return genres;
                 }
             });
             
             };
-            genreIds();
+            genreIds();  */
             DOMSelectors.grid.insertAdjacentHTML(
                 "beforeend",
                 `<div class="anime-card">
                 <div class="anime-card-front">
                   <img
-                    src="https://image.tmdb.org/t/p/w300/${anime.poster_path}"
+                    src="${anime.image_url}"
                     alt=""
                     class="poster"
                   />
                 </div>
                 <div class="anime-card-back">
-                  <h3 class="anime-card-header">${anime.original_title}</h3>
+                  <h3 class="anime-card-header">${anime.title}</h3>
                   <div class="score-box">
                     <p class="user-score">Community Score</p>
-                    <p class="user-score">${anime.vote_average}</p>
+                    <p class="user-score">${anime.score}</p>
                   </div>
         
                   <div class="release-box">
                     <p class="release-date">Released</p>
-                    <p class="release-date">${anime.release_date}</p>
-                  </div>
-        
-                  <div class="anime-genres">
-                    <div>${genreArr}</div>
-                  </div>
-                </div>
-              </div>`
+                    <p class="synopsis">${anime.synopsis}</p>
+                  </div>`
             );
         });    
     } catch (error) {
@@ -67,5 +61,5 @@ const query = `https://jikan.moe/v3/anime/${id}/${request}/${parameter}`;
     }
 };
 
-const search = `https://api.jikan.moe/v3/search/anime?q=&page=1&genre=${genreId}&order_by=members&sort=desc`;
+//const search = `https://api.jikan.moe/v3/search/anime?q=&page=1&genre=${genreId}&order_by=members&sort=desc`;
 init();
