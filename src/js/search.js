@@ -31,7 +31,7 @@ const listen = async function () {
     const searchQuery = async function () {
       
       DOMSelectors.grid.innerHTML = "";
-      let query =  `https://api.jikan.moe/v3/search/anime?q=${searchParams}&page=${pageNumber}&limit=40`;
+      let query =  `https://api.jikan.moe/v3/search/anime?q=${searchParams}&page=1&limit=40`;
       if (searchParams === "") {
         query = `https://api.jikan.moe/v3/search/anime?q=&page=1&sort=desc&order_by=members&limit=12`;
       }
