@@ -34,16 +34,16 @@ const query = `https://api.jikan.moe/v3/search/anime?q=&page=${pageNumber}&sort=
         const response = await fetch(query);
         const data = await response.json()
         data.results.forEach((anime) => {
-            /* let genreArr = [];
+           /* let genreArr = [];
             const genreIds = function(){
                 genres.forEach((element) =>{
-                if (id.includes(element.id)) {
+                if (anime.genre_anime_id.includes(element.id)) {
                     genreArr.push(element.name);
                     return genres;
                 }
             });
             };
-            genreIds();  */ 
+            genreIds();  */
             DOMSelectors.grid.insertAdjacentHTML(
                 "beforeend",
                 `<div class="anime-card">

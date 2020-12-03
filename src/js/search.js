@@ -1,43 +1,25 @@
 import {genres} from "./genres";
 import {DOMSelectors} from "./DOM";
 
-let pageNumber = 1;
 //function for changed page?
 
 const listen = function () {
   DOMSelectors.searchForm.addEventListener("submit", function (e) {
-    const nextPage = function () {
-      //next.addeventlistener
-      DOMSelectors.btnNext.addEventListener("click", function () {
-        //update page variable
-        pageNumber++;
-        //re-run query()
-        searchQuery(pageNumber);
-      });
-    };
-    const previousPage = function () {
-      //next.addeventlistener
-      DOMSelectors.btnPrev.addEventListener("click", function () {
-        //update page variable
-        pageNumber--;
-        //re-run query()
-        searchQuery(pageNumber);
-      });
-    };
-    previousPage();
-    nextPage();
+    DOMSelectors.errorMessage.innerHTML =""; 
     e.preventDefault();
-
     const searchParams = DOMSelectors.searchArea.value;
-    const searchQuery = async function (pageNumber) {
-      console.log(pageNumber);
+    
+    const searchQuery = async function () {
       DOMSelectors.grid.innerHTML = "";
-      const query =  `https://api.jikan.moe/v3/search/anime?q=${searchParams}&page=${pageNumber}`;
+      const query =  `https://api.jikan.moe/v3/search/anime?q=${searchParams}&page=1`;
+      if (searchPara === "") {
+        query = `https://api.jikan.moe/v3/search/anime?q=&page=1&sort=desc&order_by=members&limit=12`;
+      }
       try {
         const response = await fetch(query);
         const data = await response.json();
 
-        data.results.forEach((movie) => {
+        data.results.forEach((anime) => {
             DOMSelectors.grid.insertAdjacentHTML(
                 "beforeend",
                 `<div class="anime-card">
@@ -72,3 +54,4 @@ searchQuery();
 
 listen(); 
 
+export { listen };
