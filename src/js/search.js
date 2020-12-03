@@ -5,7 +5,7 @@ let pageNumber = 1;
 
 const listen = function () {
   DOMSelectors.searchForm.addEventListener("submit", function (e) {
-    const nextPage = function () {
+    /* const nextPage = function () {
       //next.addeventlistener
       DOMSelectors.btnNext.addEventListener("click", function () {
         //update page variable
@@ -24,7 +24,7 @@ const listen = function () {
       });
     };
     previousPage();
-    nextPage();
+    nextPage(); */
     e.preventDefault();
 
     const searchParams = DOMSelectors.searchArea.value;
