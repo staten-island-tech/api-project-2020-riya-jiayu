@@ -1,4 +1,3 @@
-import {genres} from "./genres";
 import {DOMSelectors} from "./DOM";
 
 let pageNumber = 1;
@@ -32,8 +31,8 @@ const listen = function () {
     const searchQuery = async function (pageNumber) {
       
       DOMSelectors.grid.innerHTML = "";
-      let query =  `https://api.jikan.moe/v3/search/anime?q=${searchParams}&page=${pageNumber}`;
-      if (searchPara === "") {
+      let query =  `https://api.jikan.moe/v3/search/anime?q=${searchParams}&page=1&limit=44`;
+      if (searchParams === "") {
         query = `https://api.jikan.moe/v3/search/anime?q=&page=1&sort=desc&order_by=members&limit=12`;
       }
       try {
