@@ -1,37 +1,49 @@
 import {genres} from "./genres";
 import {DOMSelectors} from "./DOM";
+import {listen} from "./search";
 
-//update variable for page
-/*let pageNumber = 1;
-//next function updates variable and passes into query
-const nextPage = function(){
-    DOMSelectors.btnNext.addEventListener("click", function(){
-        pageNumber++;
-        init(pageNumber);
-    });
+let pageNumber = 1;
+//function for changed page?
+const nextPage = function () {
+  //next.addeventlistener
+  DOMSelectors.btnNext.addEventListener("click", function () {
+    //update page variable
+    pageNumber++;
+    //re-run query()
+    init(pageNumber);
+  });
 };
-nextPage();*/
+const previousPage = function () {
+  //next.addeventlistener
+  DOMSelectors.btnPrev.addEventListener("click", function () {
+    //update page variable
+    pageNumber--;
+    //re-run query()
+    init(pageNumber);
+  });
+};
+previousPage();
+nextPage();
 
 const init = async function (pageNumber){
   const DOMSelectors = {
+    grid: document.querySelector(".anime-grid"),
   }
-const query = `https://api.jikan.moe/v3/search/anime?q=&page=1&sort=desc&order_by=members`;
+const query = `https://api.jikan.moe/v3/search/anime?q=&page=${pageNumber}&sort=desc&order_by=members&limit=12`;
     try {
         const response = await fetch(query);
         const data = await response.json()
         data.results.forEach((anime) => {
-            
             /* let genreArr = [];
             const genreIds = function(){
                 genres.forEach((element) =>{
-                if (anime.genres_id.includes(element.id)) {
+                if (id.includes(element.id)) {
                     genreArr.push(element.name);
                     return genres;
                 }
             });
-            
             };
-            genreIds();  */
+            genreIds();  */ 
             DOMSelectors.grid.insertAdjacentHTML(
                 "beforeend",
                 `<div class="anime-card">
@@ -60,9 +72,4 @@ const query = `https://api.jikan.moe/v3/search/anime?q=&page=1&sort=desc&order_b
     }
 };
 
-<<<<<<< HEAD
 init(pageNumber);
-=======
-//const search = `https://api.jikan.moe/v3/search/anime?q=&page=1&genre=${genreId}&order_by=members&sort=desc`;
-init();
->>>>>>> parent of 4cde130... idk
