@@ -183,7 +183,7 @@ const listen = async function listen() {
         const response = await fetch(query);
         const data = await response.json();
         data.results.forEach(anime => {
-          _DOM.DOMSelectors.grid.insertAdjacentHTML("beforeend", "<div class=\"anime-card\">\n                <div class=\"anime-card-front\">\n                  <img\n                    src=\"".concat(anime.image_url, "\"\n                    alt=\"\"\n                    class=\"poster\"\n                  />\n                </div>\n                <div class=\"anime-card-back\">\n                  <h3 class=\"anime-card-header\">").concat(anime.title, "</h3>\n                  <div class=\"score-box\">\n                    <p class=\"user-score\">Community Score</p>\n                    <p class=\"user-score\">").concat(anime.score, "</p>\n                  </div>\n        \n                  <div class=\"release-box\">\n                    <p class=\"release-date\">Released</p>\n                    <p class=\"synopsis\">").concat(anime.synopsis, "</p>\n                  </div>"));
+          _DOM.DOMSelectors.grid.insertAdjacentHTML("beforeend", "<div class=\"anime-card\">\n                <div class=\"anime-card-front\">\n                  <img\n                    src=\"".concat(anime.image_url, "\"\n                    alt=\"\"\n                    class=\"poster\"\n                  />\n                </div>\n                <div class=\"anime-card-back\">\n                  <h3 class=\"anime-card-header\">").concat(anime.title, "</h3>\n                  <div class=\"score-box\">\n                    <p class=\"user-score\">Community Score</p>\n                    <p class=\"user-score\">").concat(anime.score, "</p>\n                  </div>\n        \n                  <div class=\"release-box\">\n                    <p class=\"release-date\">Released</p>\n                    <p class=\"rating\">").concat(anime.rated, " </p>\n                    <p class=\"synopsis\">").concat(anime.synopsis, "</p>\n                    <a  class=\"user-score\" href=\"").concat(anime.url, "\" target=\"_blank\"> MyAnimeList</a>\n                  </div>"));
         });
       } catch (error) {
         console.log(error);
@@ -238,7 +238,7 @@ const init = async function init(pageNumber) {
     const response = await fetch(query);
     const data = await response.json();
     data.results.forEach(anime => {
-      DOMSelectors.grid.insertAdjacentHTML("beforeend", "<div class=\"anime-card\">\n                <div class=\"anime-card-front\">\n                  <img\n                    src=\"".concat(anime.image_url, "\"\n                    alt=\"\"\n                    class=\"poster\"\n                  />\n                </div>\n                <div class=\"anime-card-back\">\n                  <h3 class=\"anime-card-header\">").concat(anime.title, "</h3>\n                  <div class=\"score-box\">\n                    <p class=\"user-score\">Community Score</p>\n                    <p class=\"user-score\">").concat(anime.score, "</p>\n                </div>\n        \n                  <div class=\"release-box\">\n                    <p class=\"release-date\">Released</p>\n                    <p class=\"synopsis\">").concat(anime.synopsis, "</p>\n                    <a  class=\"user-score\" href=\"").concat(anime.url, "\" target=\"_blank\"> MyAnimeList</a>\n                  </div>"));
+      DOMSelectors.grid.insertAdjacentHTML("beforeend", "<div class=\"anime-card\">\n                <div class=\"anime-card-front\">\n                  <img\n                    src=\"".concat(anime.image_url, "\"\n                    alt=\"\"\n                    class=\"poster\"\n                  />\n                </div>\n                <div class=\"anime-card-back\">\n                  <h3 class=\"anime-card-header\">").concat(anime.title, "</h3>\n                  <div class=\"score-box\">\n                    <p class=\"user-score\">Community Score</p>\n                    <p class=\"user-score\">").concat(anime.score, "</p>\n                </div>\n                            \n                  <div class=\"release-box\">\n                    <p class=\"release-date\">Released</p>\n                    <p class=\"rating\">").concat(anime.rated, " </p>\n                    <p class=\"synopsis\">").concat(anime.synopsis, "</p>\n                    <a  class=\"user-score\" href=\"").concat(anime.url, "\" target=\"_blank\"> MyAnimeList</a>\n                  </div>"));
     });
   } catch (error) {
     console.log(error);
@@ -246,7 +246,7 @@ const init = async function init(pageNumber) {
 };
 
 init(pageNumber);
-},{"./DOM":"js/DOM.js","./search":"js/search.js"}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+},{"./DOM":"js/DOM.js","./search":"js/search.js"}],"../node_modules/parcel/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
@@ -274,7 +274,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "4929" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "5387" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
@@ -450,5 +450,5 @@ function hmrAcceptRun(bundle, id) {
     return true;
   }
 }
-},{}]},{},["../node_modules/parcel-bundler/src/builtins/hmr-runtime.js","js/index.js"], null)
+},{}]},{},["../node_modules/parcel/src/builtins/hmr-runtime.js","js/index.js"], null)
 //# sourceMappingURL=/js.00a46daa.js.map

@@ -60,7 +60,9 @@ const listen = async function () {
         
                   <div class="release-box">
                     <p class="release-date">Released</p>
+                    <p class="rating">${anime.rated} </p>
                     <p class="synopsis">${anime.synopsis}</p>
+                    <a  class="user-score" href="${anime.url}" target="_blank"> MyAnimeList</a>
                   </div>`
 
             );

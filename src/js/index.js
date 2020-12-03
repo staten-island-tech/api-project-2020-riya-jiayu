@@ -49,13 +49,10 @@ const query = `https://api.jikan.moe/v3/search/anime?q=&page=${pageNumber}&sort=
                     <p class="user-score">Community Score</p>
                     <p class="user-score">${anime.score}</p>
                 </div>
-                <div class="score-box">
-                    <p class="user-score">Rating</p>
-                    <p class="user-score">${anime.rated}</p>
-                </div>
-        
+                            
                   <div class="release-box">
                     <p class="release-date">Released</p>
+                    <p class="rating">${anime.rated} </p>
                     <p class="synopsis">${anime.synopsis}</p>
                     <a  class="user-score" href="${anime.url}" target="_blank"> MyAnimeList</a>
                   </div>`
