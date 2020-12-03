@@ -1,4 +1,3 @@
-
 import {DOMSelectors} from "./DOM";
 
 //let pageNumber = 1;
