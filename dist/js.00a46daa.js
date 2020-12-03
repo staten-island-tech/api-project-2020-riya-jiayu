@@ -173,10 +173,10 @@ const listen = async function listen() {
 
     const searchQuery = async function searchQuery(pageNumber) {
       _DOM.DOMSelectors.grid.innerHTML = "";
-      let query = "https://api.jikan.moe/v3/search/anime?q=".concat(searchParams, "&page=").concat(pageNumber, "&limit=48");
+      let query = "https://api.jikan.moe/v3/search/anime?q=".concat(searchParams, "&page=").concat(pageNumber, "&order_by=score&limit=48");
 
       if (searchParams === "") {
-        query = "https://api.jikan.moe/v3/search/anime?q=&page=1&sort=desc&order_by=members&limit=12";
+        query = "https://api.jikan.moe/v3/search/anime?q=&page=1&sort=desc&order_by=scores&limit=12";
       }
 
       try {
@@ -232,7 +232,7 @@ const init = async function init(pageNumber) {
   const DOMSelectors = {
     grid: document.querySelector(".anime-grid")
   };
-  const query = "https://api.jikan.moe/v3/search/anime?q=&page=".concat(pageNumber, "&sort=desc&order_by=members&limit=12");
+  const query = "https://api.jikan.moe/v3/search/anime?q=&page=".concat(pageNumber, "&sort=desc&order_by=score&limit=12");
 
   try {
     const response = await fetch(query);
@@ -274,7 +274,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "5387" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "6477" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
