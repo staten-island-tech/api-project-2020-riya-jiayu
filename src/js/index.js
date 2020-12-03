@@ -27,23 +27,22 @@ nextPage();
 
 const init = async function (pageNumber){
   const DOMSelectors = {
-    grid: document.querySelector(".anime-grid"),
   }
 const query = `https://api.jikan.moe/v3/search/anime?q=&page=${pageNumber}&sort=desc&order_by=members&limit=12`;
     try {
         const response = await fetch(query);
         const data = await response.json()
         data.results.forEach((anime) => {
-           /* let genreArr = [];
+            /* let genreArr = [];
             const genreIds = function(){
                 genres.forEach((element) =>{
-                if (anime.genre_anime_id.includes(element.id)) {
+                if (id.includes(element.id)) {
                     genreArr.push(element.name);
                     return genres;
                 }
             });
             };
-            genreIds();  */
+            genreIds();  */ 
             DOMSelectors.grid.insertAdjacentHTML(
                 "beforeend",
                 `<div class="anime-card">
@@ -73,6 +72,3 @@ const query = `https://api.jikan.moe/v3/search/anime?q=&page=${pageNumber}&sort=
 };
 
 init(pageNumber);
-
-
-//search
