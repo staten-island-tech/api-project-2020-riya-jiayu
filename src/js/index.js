@@ -12,7 +12,7 @@ const nextPage = function () {
     init(pageNumber);
   });
 };
-/* const previousPage = function () {
+ const previousPage = function () {
   //next.addeventlistener
   DOMSelectors.btnPrev.addEventListener("click", function () {
     //update page variable
@@ -21,7 +21,7 @@ const nextPage = function () {
     init(pageNumber);
   });
 };
-previousPage(); */
+previousPage(); 
 nextPage();
 
 const init = async function (pageNumber){
@@ -48,11 +48,12 @@ const query = `https://api.jikan.moe/v3/search/anime?q=&page=${pageNumber}&sort=
                   <div class="score-box">
                     <p class="user-score">Community Score</p>
                     <p class="user-score">${anime.score}</p>
-                  </div>
+                </div>
         
                   <div class="release-box">
                     <p class="release-date">Released</p>
                     <p class="synopsis">${anime.synopsis}</p>
+                    <a  class="user-score" href="${anime.url}" target="_blank"> MyAnimeList</a>
                   </div>`
             );
         });    
