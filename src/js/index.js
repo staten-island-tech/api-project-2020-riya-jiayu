@@ -12,7 +12,7 @@ const nextPage = function () {
     init(pageNumber);
   });
 };
- const previousPage = function () {
+const previousPage = function () {
   //next.addeventlistener
   DOMSelectors.btnPrev.addEventListener("click", function () {
     //update page variable
@@ -21,7 +21,7 @@ const nextPage = function () {
     init(pageNumber);
   });
 };
-previousPage(); 
+previousPage();
 nextPage();
 
 const init = async function (pageNumber){

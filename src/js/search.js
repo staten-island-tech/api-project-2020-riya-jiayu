@@ -1,6 +1,7 @@
+
 import {DOMSelectors} from "./DOM";
 
-//let pageNumber = 1;
+let pageNumber = 1;
 //function for changed page?
 
 const listen = async function () {
@@ -28,10 +29,10 @@ const listen = async function () {
     e.preventDefault();
 
     const searchParams = DOMSelectors.searchArea.value;
-    const searchQuery = async function () {
+    const searchQuery = async function (pageNumber) {
       
       DOMSelectors.grid.innerHTML = "";
-      let query =  `https://api.jikan.moe/v3/search/anime?q=${searchParams}&page=1&limit=40`;
+      let query =  `https://api.jikan.moe/v3/search/anime?q=${searchParams}&page=${pageNumber}&limit=48`;
       if (searchParams === "") {
         query = `https://api.jikan.moe/v3/search/anime?q=&page=1&sort=desc&order_by=members&limit=12`;
       }
@@ -60,7 +61,6 @@ const listen = async function () {
                   <div class="release-box">
                     <p class="release-date">Released</p>
                     <p class="synopsis">${anime.synopsis}</p>
-                    <a  class="user-score" href="${anime.url}" target="_blank"> MyAnimeList</a>
                   </div>`
 
             );
